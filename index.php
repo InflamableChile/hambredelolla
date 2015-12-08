@@ -29,6 +29,10 @@
 <link rel="stylesheet" href="css/hambredelolla.css" />
 <link rel="stylesheet" href="css/player.css" />
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/jquery.fileupload.css">
+
 <?php
 	$db_host="localhost";
 	$db_user="desinfla_lolla";
@@ -101,11 +105,9 @@
 			
 		</div>	
 
-
-		
-
-
 		<button href="#ig" id="ig-on" >Conectate a Instagram</button>
+
+		<button href="#fb" id="fb-on" >Sube tu propio Video!</button>
 
 		<br \>
 
@@ -125,13 +127,53 @@
 		</div>	
 	</div>	
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>		
+	<div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		            <!-- The fileinput-button span is used to style the file input field as button -->
+				    <span class="btn btn-success fileinput-button">
+				        <i class="glyphicon glyphicon-plus"></i>
+				        <span>Seleccionar Archivo</span>
+				        <!-- The file input field used as target for the file upload widget -->
+				        <input id="fileupload" type="file" name="files[]" multiple>
+				    </span>
+				    <br>
+				    <br>
+				    <!-- The global progress bar -->
+				    <div id="progress" class="progress">
+				        <div class="progress-bar progress-bar-success"></div>
+				    </div>
+				    <div id="files" class="files"></div>
+		        </div>
+		        <div class="modal-footer">
+		            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>	
+
+	<script src="js/vendor/jquery.ui.widget.js"></script>
+	<script src="js/jquery.iframe-transport.js"></script>
+	<script src="js/jquery.fileupload.js"></script>
+
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 	<script src="js/hello.js"></script>	
 	<script src="js/hello_module/instagram.js"></script>	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="http://vjs.zencdn.net/5.2.4/video.js"></script>
-	<script src="js/instagram_api.js"></script>	
+	<script src="js/instagram_api.js"></script>
+	<script src="js/facebook_connect.js"></script>	
+
 
 </body>
+
 </html>
