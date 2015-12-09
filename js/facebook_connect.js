@@ -67,28 +67,63 @@ jQuery(document).ready(function($) {
     function show_modal() {
         $("#myModal").modal('show');
         'use strict';
-        // Change this to the location of your server-side upload handler:
-        var url = 'server/php/';
-        $('#fileupload').fileupload({
-            url: url,
-            dataType: 'json',
-            formData: {net_id: net_id, net: net, user_full_name: user_full_name, user_id: user_id, user_profile_picture: user_profile_picture, uploaded_time: uploaded_time},
-            done: function (e, data) {
-                console.log("DWADWADWA");
-                console.log(data);
-                $.each(data.result.files, function (index, file) {
-                    $('<p/>').text(file.name).appendTo('#files');
-                });
+        var validates_return = validates_user_video();
+        console.log("RETURN CTM " + validates_return)
+        if( validates_return == true) {
+            var url = 'server/php/';
+            $('#fileupload').fileupload({
+                url: url,
+                dataType: 'json',
+                formData: {net_id: net_id, net: net, user_full_name: user_full_name, user_id: user_id, user_profile_picture: user_profile_picture, uploaded_time: uploaded_time},
+                done: function (e, data) {
+                    console.log("DWADWADWA");
+                    console.log(data);
+                    $.each(data.result.files, function (index, file) {
+                        $('<p/>').text(file.name).appendTo('#files');
+                    });
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress .progress-bar').css(
+                        'width',
+                        progress + '%'
+                        );
+                }
+            }).prop('disabled', !$.support.fileInput)
+            .parent().addClass($.support.fileInput ? undefined : 'disabled');
+        }   else {
+
+        }
+
+    }
+
+    function validates_user_video() {
+        var return_validates = false;
+        console.log("NET ID ->", net_id);
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "check_user_upload.php",
+            async: false,
+            data: {
+                'net_id' : net_id,
             },
-            progressall: function (e, data) {
-                var progress = parseInt(data.loaded / data.total * 100, 10);
-                $('#progress .progress-bar').css(
-                    'width',
-                    progress + '%'
-                    );
+            success: function(data) {
+                console.log(data);
+                if(data == 'true'){
+                    console.log("TRUE CTM");
+                    return_validates = true;
+                } else {
+                    console.log("FALSE CTM");
+                    return_validates = false;
+                }
+            },
+            error: function(xhr, desc, err) {
+                console.log(xhr);
+                console.log("Details: " + desc + "\nError:" + err);
             }
-        }).prop('disabled', !$.support.fileInput)
-        .parent().addClass($.support.fileInput ? undefined : 'disabled');
-    }   
+        });
+        return return_validates
+    }
 
 });

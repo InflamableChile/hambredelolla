@@ -1158,6 +1158,22 @@ class UploadHandler
         return $_REQUEST['net_id'] . $extension;
     }
 
+    //FUNCION PARA GENERAR THUMBNAIL DEL VIDEO - ESTO SE DEBE FINALIZAR CUANDO
+    //LA APLICACION ESTE EN EL SERVIDOR DADO QUE HAY QUE INSTALAR FFMPEG
+    protected function generate_video_thumb($video) {
+        //$video = $path . escapeshellcmd($_FILES['video']['name']);
+        $cmd = "ffmpeg -i $video 2>&1";
+        $second = 1;
+        if (preg_match('/Duration: ((\d+):(\d+):(\d+))/s', `$cmd`, $time)) {
+            $total = ($time[2] * 3600) + ($time[3] * 60) + $time[4];
+            $second = rand(1, ($total - 1));
+        }
+        // CAMBIAR EL RANDOM NAME .JPG POR NOMBRE DEL ARCHIVO
+        $image  = 'thumbnails/random_name.jpg';
+        $cmd = "ffmpeg -i $video -deinterlace -an -ss $second -t 00:00:01 -r 1 -y -vcodec mjpeg -f mjpeg $image 2>&1";
+        $do = `$cmd`;
+    }
+
     protected function handle_form_data($file, $index) {
         // Handle form data, e.g. $_POST['description'][$index]
 

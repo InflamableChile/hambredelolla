@@ -134,20 +134,28 @@
 		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		        </div>
 		        <div class="modal-body">
-		            <!-- The fileinput-button span is used to style the file input field as button -->
-				    <span class="btn btn-success fileinput-button">
-				        <i class="glyphicon glyphicon-plus"></i>
-				        <span>Seleccionar Archivo</span>
-				        <!-- The file input field used as target for the file upload widget -->
-				        <input id="fileupload" type="file" name="files[]" multiple>
-				    </span>
-				    <br>
-				    <br>
-				    <!-- The global progress bar -->
-				    <div id="progress" class="progress">
-				        <div class="progress-bar progress-bar-success"></div>
-				    </div>
-				    <div id="files" class="files"></div>
+		        	<!-- DIV PARA CUANDO EL USUARIO YA SUBIO ALGÚN VIDEO Y LO QUIERE BORRAR -->
+		        	<div id="fb-dashboard" style="display:none;">
+		        		<img id="fb-user-thumbail"></img>
+		        		<h1 id="fb-user_full_name"></h1>
+		        	</div>
+
+		        	<!-- DIV DE FILE UPLOAD / EL USUARIO NO HA SUBIDO NINGUN VIDEO -->
+		        	<div id="file-upload" style="display:none:">
+					    <span class="btn btn-success fileinput-button">
+					        <i class="glyphicon glyphicon-plus"></i>
+					        <span>Seleccionar Archivo</span>
+					        <!-- The file input field used as target for the file upload widget -->
+					        <input id="fileupload" type="file" name="files[]" multiple>
+					    </span>
+					    <br>
+					    <br>
+					    <!-- The global progress bar -->
+					    <div id="progress" class="progress">
+					        <div class="progress-bar progress-bar-success"></div>
+					    </div>
+					    <div id="files" class="files"></div>
+					</div>    
 		        </div>
 		        <div class="modal-footer">
 		            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
