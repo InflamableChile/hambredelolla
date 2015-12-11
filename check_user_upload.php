@@ -1,9 +1,9 @@
 
 <?php
 	$db_host="localhost";
-	$db_user="desinfla_lolla";
+	$db_user="hambrede_lolla";
 	$db_password="inflamable2015";
-	$db_name="desinfla_hambredelolla";
+	$db_name="hambrede_lolla_db";
 	$db_table_name = 'media';
 	$net_id = $_POST['net_id'];
 
@@ -12,7 +12,7 @@
         die('No se pudo conectar: ' . mysql_error($db_connection));
     }
 
-    mysql_select_db('desinfla_hambredelolla', $db_connection);
+    mysql_select_db('hambrede_lolla_db', $db_connection);
 
     $net_id = mysql_real_escape_string($net_id);
     $sql = "SELECT * FROM ". $db_table_name . " WHERE net_id = '$net_id'";

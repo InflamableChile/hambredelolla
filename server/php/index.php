@@ -10,21 +10,23 @@
  * http://www.opensource.org/licenses/MIT
  */
 
-error_reporting(E_ALL | E_STRICT);
+error_reporting(false);
+ini_set('display_errors', false);
+
 require('UploadHandler.php');
 
 
 $db_host="localhost";
-$db_user="desinfla_lolla";
+$db_user="hambrede_lolla";
 $db_password="inflamable2015";
-$db_name="desinfla_hambredelolla";
+$db_name="hambrede_lolla_db";
 $db_table_name = 'media';
 $db_connection = mysql_connect($db_host, $db_user, $db_password);
 if (!$db_connection) {
     die('No se pudo conectar: ' . mysql_error($db_connection));
 }
 
-mysql_select_db('desinfla_hambredelolla', $db_connection);
+mysql_select_db('hambrede_lolla_db', $db_connection);
 
 $net_id = $_REQUEST['net_id'];
 

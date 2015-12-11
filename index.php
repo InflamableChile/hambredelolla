@@ -1,8 +1,13 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
 <title>Hambre de Lolla</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="HambreDeLolla Concurso de La Crianza" />
+<meta name="keywords" content="Lollapalooza Chile Santiago La Crianza HambreDeLolla LaCrianza" />
+<meta name="author" content="Inflamable SpA" />
 
 <script>
   window.fbAsyncInit = function() {
@@ -28,16 +33,17 @@
 
 <link rel="stylesheet" href="css/hambredelolla.css" />
 <link rel="stylesheet" href="css/player.css" />
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <link rel="stylesheet" href="css/jquery.fileupload.css">
+<link rel="stylesheet" type="text/css" href="css/full_width_grid/default.css" />
+<link rel="stylesheet" type="text/css" href="css/full_width_grid/component.css" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.3.0/ekko-lightbox.min.css" rel="stylesheet">
 
 <?php
 	$db_host="localhost";
-	$db_user="desinfla_lolla";
+	$db_user="hambrede_lolla";
 	$db_password="inflamable2015";
-	$db_name="desinfla_hambredelolla";
+	$db_name="hambrede_lolla_db";
 ?>
 
 </head>
@@ -47,7 +53,7 @@
 	<?php 
 
 		$db_connection = mysql_connect($db_host, $db_user, $db_password);
-		mysql_select_db('desinfla_hambredelolla', $db_connection);
+		mysql_select_db('hambrede_lolla_db', $db_connection);
 
 		if (!$db_connection) {
             die('No se pudo conectar: ' . mysql_error($db_connection));
@@ -59,37 +65,42 @@
 
         if(mysql_num_rows($rsd) > 0) { 
         	?>
-    	<div class="masonry">
-        	<?php	
-        	while($row = mysql_fetch_array($rsd)) {
-    		?>
-				<div class="item">
-		    		<?php 
-		        		if($row["type"] == "video") {
-		        	?>
-						   	<video class="video-js vjs-default-skin vjs-big-play-centered  vjs-volume-bar" controls preload="auto" width="350" height="300" data-setup='{"playbackRates": [1, 1.5, 2],  "controls": true, "autoplay": false }'>
-						   		<source src=<?php echo '"' . $row["media_link"] . '"' ?> type='video/mp4'></source>
-						   		<p class="vjs-no-js">
-						      		Para ver este video por favor active el Javascript y considere actualizar su navegador a uno que soporte HTML5
-					    		</p>	
-						   	</video>
-						   	
-		    <?php    	} else if($row["type"] != "texto")  { ?>
-						   	<img src=<?php echo '"' . $row["media_link"] . '"' ?>/>
-		    <?php 		}
+    	<div class="">
+    		<ul class="cbp-rfgrid">
+	        	<?php	
+	        	while($row = mysql_fetch_array($rsd)) {
+	    		?>
+					<li>			
+						<a href="#" class=<?php echo '"' . $row["type"] . ' item-modal"' ?>  id=<?php echo '"' . $row["net_id"] . '"' ?>>		
+			    		<?php 
+			        		if($row["type"] == "video") {
+			        	?>
+							   	<!--<video class="video-js vjs-default-skin vjs-big-play-centered  vjs-volume-bar" controls preload="auto" width="350" height="300" data-setup='{"playbackRates": [1, 1.5, 2],  "controls": true, "autoplay": false }'>
+							   		<source src=<?php echo '"' . $row["media_link"] . '"' ?> type='video/mp4'></source>
+							   		<p class="vjs-no-js">
+							      		Para ver este video por favor active el Javascript y considere actualizar su navegador a uno que soporte HTML5
+						    		</p>	
+							   	</video>-->
+							   	<img src=<?php echo '"' . $row["thumbnail_link"] . '"' ?>/>
+							   	
+			    <?php    	} else if($row["type"] != "texto")  { ?>
 
-		    	$db_table_name = 'users';
-		    	$user_net_id = $row["user_id"];
-	   	 		$user_sql = "SELECT * FROM ". $db_table_name . " WHERE net_id = '$user_net_id'";
-	   	 		$user = mysql_query($user_sql, $db_connection);
-		    ?>	
-		    		<br/>
-		    		<img src=<?php echo '"' . $row["user_profile_picture"] . '"' ?> style="width: 50px; heigth: 50px"/>
+							   	<img src=<?php echo '"' . $row["media_link"] . '"' ?>/>
 
-		    		<b><?php echo ($row["user_full_name"]) ?></b> &nbsp;<a href=<?php echo '"http://wwww.instagram.com/' . $row["user_net_username"] . '"' ?> ><?php echo $row["user_net_username"] ?></a>
-		    		<p> <?php echo $row["caption"] ?> </p>
-				</div>
-    	<?php	} ?>
+			    <?php 		} else {
+
+		    				}
+
+			    ?>	
+			    		
+			    		<!--<img src=<?php echo '"' . $row["user_profile_picture"] . '"' ?> style="width: 50px; heigth: 50px"/>
+
+			    		<b><?php echo ($row["user_full_name"]) ?></b> &nbsp;<a href=<?php echo '"http://wwww.instagram.com/' . $row["user_net_username"] . '"' ?> ><?php echo $row["user_net_username"] ?></a>
+			    		<p> <?php echo $row["caption"] ?> </p>-->
+			    		</a>
+					</li>
+	    	<?php	} ?>
+    		</ul>
     	</div>	
     <?php
 
@@ -125,7 +136,27 @@
 				<input type="submit" name="submit" value="Submit" />
 			</form>
 		</div>	
-	</div>	
+	</div>
+
+
+	
+	<!-- VIDEO MODAL -->
+	<div id="video_modal" class="modal fade" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		        	<div class="container" id="modal-container">
+		        	</div>
+		        </div>
+		        <div class="modal-footer">
+		            <button type="button" class="btn btn-danger cancel" data-dismiss="modal">Cancelar</button>
+		        </div>
+		    </div>
+		</div>
+	</div>
 
 	<div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog">
@@ -136,17 +167,19 @@
 		        <div class="modal-body">
 		        	<!-- DIV PARA CUANDO EL USUARIO YA SUBIO ALGÚN VIDEO Y LO QUIERE BORRAR -->
 		        	<div id="fb-dashboard" style="display:none;">
+		        		<p>Ya has subido un video</p>
 		        		<img id="fb-user-thumbail"></img>
 		        		<h1 id="fb-user_full_name"></h1>
+		        		
 		        	</div>
 
 		        	<!-- DIV DE FILE UPLOAD / EL USUARIO NO HA SUBIDO NINGUN VIDEO -->
-		        	<div id="file-upload" style="display:none:">
+		        	<div id="file-upload" style="display:none;">
 					    <span class="btn btn-success fileinput-button">
 					        <i class="glyphicon glyphicon-plus"></i>
 					        <span>Seleccionar Archivo</span>
 					        <!-- The file input field used as target for the file upload widget -->
-					        <input id="fileupload" type="file" name="files[]" multiple>
+					        <input id="fileupload" type="file" name="files[]" accept="video/mp4" multiple>
 					    </span>
 					    <br>
 					    <br>
@@ -158,7 +191,7 @@
 					</div>    
 		        </div>
 		        <div class="modal-footer">
-		            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+		            <button type="button" class="btn btn-danger cancel" data-dismiss="modal">Cancelar</button>
 		        </div>
 		    </div>
 		</div>
@@ -170,16 +203,17 @@
 	<script src="js/vendor/jquery.ui.widget.js"></script>
 	<script src="js/jquery.iframe-transport.js"></script>
 	<script src="js/jquery.fileupload.js"></script>
-
+	<script src="js/modernizr.custom.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 	<script src="js/hello.js"></script>	
 	<script src="js/hello_module/instagram.js"></script>	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
-	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="http://vjs.zencdn.net/5.2.4/video.js"></script>
 	<script src="js/instagram_api.js"></script>
-	<script src="js/facebook_connect.js"></script>	
+	<script src="js/facebook_connect.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.3.0/ekko-lightbox.min.js"></script>
+
 
 
 </body>

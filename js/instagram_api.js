@@ -4,20 +4,11 @@ jQuery(document).ready(function($) {
 		instagram : '9e99de3624344c628270c59edc199930'
 	},{
 		scope : 'photos',
-		redirect_uri:'http://desarrollo.inflamable.cl/hambredelolla/redirect.html',
+		redirect_uri:'http://elite865.inmotionhosting.com/~hambredelolla/redirect.html',
 	});
 
 	var user_id, user_name, user_pic;
-
- 
-    var $container = $('#container');
-  
-    $container.imagesLoaded( function(){
-      $container.masonry({
-        itemSelector : '.masonryImage'
-      });
-    });
- 
+	
 
 	function profileHandler( r ){
 		var profile = document.getElementById( 'profile' );
@@ -68,7 +59,7 @@ jQuery(document).ready(function($) {
 		            	'net_id' : media.id,
 		            	'user_id' : media.user.id,
 		            	'media_link' : media.videos.standard_resolution.url,
-		            	'thumbnail_link' : media.images.thumbnail.url,
+		            	'thumbnail_link' : media.images.standard_resolution.url,
 		            	'uploaded_time' : uploaded_time,
 		            	'caption' : media.caption.text,
 		            	'type' : media.type
@@ -105,7 +96,7 @@ jQuery(document).ready(function($) {
 		            	'net_id' : media.id,
 		            	'user_id' : media.user.id,
 		            	'media_link' : media.images.standard_resolution.url,
-		            	'thumbnail_link' : media.images.thumbnail.url,
+		            	'thumbnail_link' : media.images.standard_resolution.url,
 		            	'uploaded_time' : uploaded_time,
 		            	'caption' : media.caption.text,
 		            	'type' : media.type
