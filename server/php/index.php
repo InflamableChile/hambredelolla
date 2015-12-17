@@ -38,3 +38,4 @@ $rsd = mysql_query($sql,$db_connection);
 if(mysql_num_rows($rsd) == 0) {
 	$upload_handler = new UploadHandler();
 }
+

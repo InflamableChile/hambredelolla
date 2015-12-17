@@ -1,40 +1,5 @@
 jQuery(document).ready(function($) {
 
-    $('.item-modal').click(function() {
-
-
-        $("#video_modal").modal('show');
-
-        $.ajax({
-            type: "GET",
-            dataType: "html",
-            url: "check_user_upload.php",
-            async: false,
-            data: {
-                'net_id' : net_id,
-            },
-            success: function(data) {
-                console.log(data);
-                if(data == 'true'){
-                    $('#fb-dashboard').hide();
-                    $('#file-upload').show();
-
-                    $('#fb-video-uploaded').find("source").src = ''
-                    return_validates = true;
-                } else {
-                    $('#fb-dashboard').show();
-                    $('#file-upload').hide();
-                    return_validates = false;
-                }
-            },
-            error: function(xhr, desc, err) {
-                console.log(xhr);
-                console.log("Details: " + desc + "\nError:" + err);
-            }
-        });
-
-    });
-
     $('#fb-on').click(function() {
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {

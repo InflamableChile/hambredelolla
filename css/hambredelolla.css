@@ -5,112 +5,239 @@ body {
 }
 
 img, video {
-	width: inherit;
+    width: inherit;
 }
 
-.wrapper {
-    width: 95%;
-    margin: 3em auto;
-}
-
-.masonry {
-    margin: 1.5em 0;
-    padding: 0;
-    -moz-column-gap: 1.5em;
-    -webkit-column-gap: 1.5em;
-    column-gap: 1.5em;
-    font-size: .85em;
-}
-
-.item {
+li {
+    height: 0;
+    padding: 25% 0 0 0;
+    overflow: hidden;
     display: inline-block;
-    background: #fff;
-    padding: 1em;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box;
+    vertical-align: top;
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-shadow: 2px 2px 4px 0 #ccc;
+    box-sizing: border-box;
+    position: relative;
+}
+li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+li img.landscape {
+    max-width: none;
+    max-height: 100%;
 }
 
-@media only screen and (min-width: 400px) {
-    .masonry {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
+.fill {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden
+}
+.fill img {
+    flex-shrink:0;
+    min-width:100%;
+    min-height:100%
+}
+
+.like-button-open {
+    display:block;
+    background-image: url('../img/hearth.png');
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 30px;
+}
+
+.like-button-full {
+    display:block;
+    background-image: url('../img/hearth_liked.png');
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 30px;
+}
+
+/* ================== RICARDO SIDE ============================*/
+
+.item-wrapper {
+    padding: 0px 30px 0px;
+}
+
+.media-wrapper {
+    margin: 0 auto 15px;
+    background: rgba(0,0,0,0.1);
+    min-height: 200px;
+    max-width: 600px;
+}
+
+.item-cont {
+    margin: 0;
+}
+.caption-table {
+    height: auto;
+    padding: 0 0 15px;
+    height: 50px;
+    width: 100%;
+    display: table;
+}
+
+.caption-table .caption-content {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.caption-content {
+    overflow: hidden;
+}
+
+.userpic {
+    width: 70px;
+    height: 70px;
+    border-radius: 30px;
+    background-size: cover !important;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    margin-right: 15px;
+}
+
+
+.item-meta {
+    height: 90px;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-color: rgba(240, 237, 231, 0.4);
+    padding-top: 15px;
+    position: relative;
+    margin: 5px 0 0;
+    box-sizing: content-b
+}
+
+.user-name {
+    margin-right: 10px
+}
+
+.left-side-wrapper a {
+    display: inline-block;
+    border: none !important;
+}
+
+.user-nickname {
+    color: rgb(218, 218, 218) !important;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.right-side-wrapper {
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 5px;
+    right: 20px;
+    -webkit-transform: translate3d(0, -10px, 0);
+    -moz-transform: translate3d(0, -10px, 0);
+    -ms-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+    -webkit-backface-visibility: hidden;
+    -ms-transition: all 100ms ease 0ms;
+    -moz-transition: all 100ms ease 0ms;
+    -webkit-transition: all 100ms ease 0ms;
+    transition: all 100ms ease 0ms;
+}
+
+
+a:hover {
+    color: #F1EAEA;
+}
+
+.modal-content {
+    background-image: url('../img/modal_bg.png');
+    border: 8px solid rgb(0, 0, 0);
+    color: #F1EAEA;
+}
+
+.modal-header {
+    padding: 10px;
+    border-bottom: 0;
+}
+
+.modal-header .close {
+    margin-top: -12px;
+    margin-bottom: -20px;
+}
+
+.close {
+    float: right;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.7;
+}
+.close:focus, .close:hover {
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .4;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 700px !important;
     }
 }
 
-@media only screen and (min-width: 700px) {
-    .masonry {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
+/* ==============================================================*/
+
+@media screen and (max-width: 1190px) {
+    li {
+        padding: 33% 0 0 0;
     }
 }
 
-@media only screen and (min-width: 900px) {
-    .masonry {
-        -moz-column-count: 4;
-        -webkit-column-count: 4;
-        column-count: 4;
+@media screen and (max-width: 945px) {
+    li {
+        padding: 33% 0 0 0;
     }
 }
 
-@media only screen and (min-width: 1100px) {
-    .masonry {
-        -moz-column-count: 5;
-        -webkit-column-count: 5;
-        column-count: 5;
+@media screen and (max-width: 660px) {
+    li {
+        padding: 42% 0 0 0;
     }
 }
 
-@media only screen and (min-width: 1280px) {
-    .wrapper {
-        width: 1260px;
+@media screen and (max-width: 660px) {
+    li {
+        padding: 54% 0 0 0;
     }
 }
 
+@media screen and (max-width: 400px) {
+    .cbp-rfgrid li {
+        width: 50%; /* Fallback */
+        width: -webkit-calc(100% / 2);
+        width: calc(100% / 2);
+    }
+}
 
-#container {
- width: 1200px;
- margin: 0 auto;
+@media screen and (max-width: 300px) {
+    .cbp-rfgrid li {
+        width: 100%;
+    }
 }
- 
-/*Media Queries*/
-@media only screen and (max-width : 1199px),
-only screen and (max-device-width : 1199px){
- #container {
- width: 1000px;
- }
-}
- 
- 
-@media only screen and (max-width : 999px),
-only screen and (max-device-width : 999px){
- #container {
- width: 800px;
- }
-}
- 
-@media only screen and (max-width : 799px),
-only screen and (max-device-width : 799px){
- #container {
- width: 600px;
- }
-}
- 
-@media only screen and (max-width : 599px),
-only screen and (max-device-width : 599px){
- #container {
- width: 400px;
- }
-}
- 
-@media only screen and (max-width : 399px),
-only screen and (max-device-width : 399px){
- #container {
- width: 200px;
- }
-}
+

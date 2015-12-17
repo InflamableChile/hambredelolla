@@ -16,7 +16,7 @@
     
 
     $url = 'https://api.twitter.com/1.1/search/tweets.json';
-    $getfield = '?f=videos&vertical=default&rc=typd&q=%23hambredelolla';
+    $getfield = '?src=typd&q=%23hambredelolla';
     $requestMethod = 'GET';
 
     $twitter = new TwitterAPIExchange($settings);
@@ -54,8 +54,8 @@
         $net = utf8_decode('twitter');
         $user_id = utf8_decode($statuses[$i]['user']['id']);
         $net_id = utf8_decode($statuses[$i]['id']);
-        $media_link = utf8_decode($statuses[$i]['entities']['media'][0]['media_url']);
-        $thumbnail_link = utf8_decode($statuses[$i]['entities']['media'][0]['media_url']);
+        $media_link = utf8_decode($statuses[$i]['entities']['media'][0]['media_url']). ':large';
+        $thumbnail_link = utf8_decode($statuses[$i]['entities']['media'][0]['media_url']). ':large';
         $uploaded_time = utf8_decode($statuses[$i]['created_at']);
         $caption = utf8_decode($statuses[$i]['text']);
         $expanded_url = utf8_decode($statuses[$i]['entities']['media'][0]['expanded_url']);
@@ -65,7 +65,7 @@
         } else if (strpos($media_link,'video') !== false) {
             $type = utf8_decode('video_twitter');
         } else {
-            $type = utf8_decode('imagen');
+            $type = utf8_decode('image');
         }
 
         mysql_select_db('hambrede_lolla_db', $db_connection);

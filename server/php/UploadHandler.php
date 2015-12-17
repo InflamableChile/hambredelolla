@@ -12,7 +12,6 @@
 
 class UploadHandler
 {
-
     protected $options;
 
     // PHP File Upload error message codes:
@@ -1100,6 +1099,7 @@ class UploadHandler
             }
             $this->set_additional_file_properties($file);
         }
+        $this -> generate_video_thumb($this->generate_unique_filename($name));
         return $file;
     }
 
@@ -1160,18 +1160,10 @@ class UploadHandler
 
     //FUNCION PARA GENERAR THUMBNAIL DEL VIDEO - ESTO SE DEBE FINALIZAR CUANDO
     //LA APLICACION ESTE EN EL SERVIDOR DADO QUE HAY QUE INSTALAR FFMPEG
-    protected function generate_video_thumb($video) {
-        //$video = $path . escapeshellcmd($_FILES['video']['name']);
-        $cmd = "ffmpeg -i $video 2>&1";
-        $second = 1;
-        if (preg_match('/Duration: ((\d+):(\d+):(\d+))/s', `$cmd`, $time)) {
-            $total = ($time[2] * 3600) + ($time[3] * 60) + $time[4];
-            $second = rand(1, ($total - 1));
-        }
-        // CAMBIAR EL RANDOM NAME .JPG POR NOMBRE DEL ARCHIVO
-        $image  = 'thumbnails/random_name.jpg';
-        $cmd = "ffmpeg -i $video -deinterlace -an -ss $second -t 00:00:01 -r 1 -y -vcodec mjpeg -f mjpeg $image 2>&1";
-        $do = `$cmd`;
+    protected function generate_video_thumb($video_path) {
+
+        exec('ffmpeg -i files/'. $video_path .' -f image2 -vframes 1 files/thumbs/'. $video_path .'.jpg');
+        
     }
 
     protected function handle_form_data($file, $index) {
@@ -1396,6 +1388,7 @@ class UploadHandler
                         $index,
                         $content_range
                     );
+                    
                 }
             } else {
                 // param_name is a single object identifier like "file",

@@ -1,5 +1,11 @@
 jQuery(document).ready(function($) {
 
+	$('.cropped-images img').each(function() {
+      if ($(this).width() > $(this).height()) {
+        $(this).addClass('landscape');        
+      }
+    });
+
 	var hola = hello.init({
 		instagram : '9e99de3624344c628270c59edc199930'
 	},{
@@ -18,24 +24,24 @@ jQuery(document).ready(function($) {
 		user_pic = r.thumbnail;
 		console.log(r);
 		$.ajax({
-					type: "POST",
-		        	dataType: "json",
-		        	url: "user_query.php",
-		        	data: {
-		        		'net_id' : r.data.id,
-		            	'full_name' : r.data.full_name,
-		            	'net_username' : r.data.username,
-		            	'net' : 'instagram'
-		         	},
-		         	success: function(data) {
-			         	console.log(data);
-			         	console.log("USER SAVED");
-		          	},
-		          	error: function(xhr, desc, err) {
-		            	console.log(xhr);
-		            	console.log("Details: " + desc + "\nError:" + err);
-		          	}
-				});
+			type: "POST",
+        	dataType: "json",
+        	url: "user_query.php",
+        	data: {
+        		'net_id' : r.data.id,
+            	'full_name' : r.data.full_name,
+            	'net_username' : r.data.username,
+            	'net' : 'instagram'
+         	},
+         	success: function(data) {
+	         	console.log(data);
+	         	console.log("USER SAVED");
+          	},
+          	error: function(xhr, desc, err) {
+            	console.log(xhr);
+            	console.log("Details: " + desc + "\nError:" + err);
+          	}
+		});
 	}
 
 	function mediaHandler (r) {
