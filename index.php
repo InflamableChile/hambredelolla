@@ -3,7 +3,7 @@
 <head>
 <title>Hambre de Lolla</title>
 
-<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <meta name="description" content="HambreDeLolla Concurso de La Crianza" />
 <meta name="keywords" content="Lollapalooza Chile Santiago La Crianza HambreDeLolla LaCrianza" />
@@ -222,6 +222,7 @@
 	<script src="js/instagram_api.js"></script>
 	<script src="js/facebook_connect.js"></script>
 	<script src="js/modal_content.js"></script>
+	<script src="js/share.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.3.0/ekko-lightbox.min.js"></script>
 
 

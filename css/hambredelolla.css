@@ -47,7 +47,8 @@ li img.landscape {
     display:block;
     background-image: url('../img/hearth.png');
     background-repeat: no-repeat;
-    height: 25px;
+    margin-right: 15px;
+    height: 30px;
     width: 30px;
 }
 
@@ -55,14 +56,20 @@ li img.landscape {
     display:block;
     background-image: url('../img/hearth_liked.png');
     background-repeat: no-repeat;
-    height: 25px;
+    margin-right: 15px;
+    height: 30px;
     width: 30px;
+}
+
+.share-text {
+    font-family: "PraterSansOne-Regular";
 }
 
 /* ================== RICARDO SIDE ============================*/
 
 .item-wrapper {
     padding: 0px 30px 0px;
+    font-family: "PraterSansOne-Regular";
 }
 
 .media-wrapper {
@@ -106,6 +113,8 @@ li img.landscape {
 
 
 .item-meta {
+    
+    font-size: 25px;
     height: 90px;
     text-align: left;
     border-top: 1px solid rgba(255,255,255,0.1);
@@ -117,7 +126,9 @@ li img.landscape {
 }
 
 .user-name {
-    margin-right: 10px
+    margin-right: 10px;
+    margin-left: 2px;
+    vertical-align: middle;
 }
 
 .left-side-wrapper a {
@@ -128,15 +139,69 @@ li img.landscape {
 .user-nickname {
     color: rgb(218, 218, 218) !important;
     display: inline-block;
-    margin-right: 5px;
-    font-size: 12px;
+    margin-right: 7px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.icon-hdl-tw:hover {
+    color: #00A9E7;
+}
+
+.icon-hdl-fb:hover {
+    color: #1D39B1;
+}
+
+.facebook_share:focus {
+    color: #1D39B1;
+    text-decoration: none;
+}
+
+.twitter_share:focus {
+    color: #00A9E7;
+    text-decoration: none;
+}
+.demo-icon
+{
+    font-size: 30px;    
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* You can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 .right-side-wrapper {
     position: absolute;
     top: auto;
     left: auto;
-    bottom: 5px;
+    bottom: 20px;
     right: 20px;
     -webkit-transform: translate3d(0, -10px, 0);
     -moz-transform: translate3d(0, -10px, 0);
@@ -149,6 +214,27 @@ li img.landscape {
     transition: all 100ms ease 0ms;
 }
 
+.like-wrapper {
+    border-right: 2px solid rgba(255, 255, 255, 0.42);
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.share-wrapper {
+    display: inline-block;
+    font-family: "fontello";
+    margin-bottom: -10px;
+    margin-right: 20px;
+    margin-left: 5px;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.42); */
+    text-align: center;
+}
+
+.num-likes {
+    margin-right: 15px;
+    margin-bottom: 0px;
+}
 
 a:hover {
     color: #F1EAEA;
@@ -193,6 +279,11 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+}
+
+.video-modal {
+    width: 600px !important; 
+    height: 600px !important;
 }
 
 @media (min-width: 992px) {

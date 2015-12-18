@@ -1,0 +1,104 @@
+/****************************************
+Demuestra tu #hambredelolla - La Crianza
+Agencia Inflamable - 2016 
+****************************************/
+
+/****************
+FONTS
+****************/
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?38582167');
+    src: url('../font/fontello.eot?38582167#iefix') format('embedded-opentype'),
+        url('../font/fontello.woff?38582167') format('woff'),
+        url('../font/fontello.ttf?38582167') format('truetype'),
+        url('../font/fontello.svg?38582167#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PraterSansOne-Regular';
+    src: url('../font/PraterSansOne-Regular.eot?#iefix') format('embedded-opentype'), 
+        url('../font/PraterSansOne-Regular.otf')  format('opentype'),
+        url('../font/PraterSansOne-Regular.woff') format('woff'),
+        url('../font/PraterSansOne-Regular.ttf')  format('truetype'), 
+        url('../font/PraterSansOne-Regular.svg#PraterSansOne-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PraterSansOne-Bold';
+    src: url('../font/PraterSansOne-Bold.eot?#iefix') format('embedded-opentype'),  
+        url('../font/PraterSansOne-Bold.otf')  format('opentype'),
+        url('../font/PraterSansOne-Bold.woff') format('woff'), 
+        url('../font/PraterSansOne-Bold.ttf')  format('truetype'), 
+        url('../font/PraterSansOne-Bold.svg#PraterSansOne-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/****************
+BODY
+****************/
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background: url('../img/bg.jpg') repeat-y;
+}
+section {
+    height: 100%;
+    width: 100%;
+}
+a:hover {
+    text-decoration: none;
+}
+/* ---- Top ---- */
+#top {
+    position: relative;
+}
+video#bgvid { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    transition: 1s opacity;
+}
+.nav-header {
+    z-index: 10;
+    height: 100px;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+    position: absolute;
+}
+.nav-right {
+    text-align: right;
+    margin-top: 35px;
+    font-family: PraterSansOne-Regular;
+}
+.nav-right:hover a {
+    color: #FF3333;
+}
+.nav-logo {
+    background: url('../img/header_logo.png') center center no-repeat;
+    width: 100%;
+    height: 130px;
+    background-size: contain;
+    margin-top: 37px;
+}
+.nav-left {
+    margin-top: 35px;
+    font-family: PraterSansOne-Regular;
+}
+.nav-left:hover a {
+    color: #00CC99;
+}
