@@ -1,0 +1,221 @@
+
+.cbp-rfgrid li {
+    z-index: 1;    
+}
+
+.modal {
+    z-index: 9999;
+}
+@media screen and (max-width: 1190px) {
+    .cbp-rfgrid li {
+        width: 33.333333%; /* Fallback */
+        width: -webkit-calc(100% / 3);
+        width: calc(100% / 3);
+    }
+
+    .footer {
+        height: 120px
+    }
+
+    .line-foot {
+        height: 60px;
+    }
+    .lc-logo {
+        width: 85px;
+        margin-top: 25px;
+    }
+    .lolla-logo {
+        width: 130px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 945px) {
+    .cbp-rfgrid li {
+        width: 50%; /* Fallback */
+        width: -webkit-calc(100% / 2);
+        width: calc(100% / 2);
+        -webkit-transform-origin: 0% 0% !important;
+        transform-origin: 0% 0% !important;
+        -webkit-transform-style: none !important;
+        transform-style: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+    }
+
+    .item-wrapper {
+        padding: 0px 10px 0px;
+    }
+    .campaign-call {
+        display: none;
+    }
+    /*#top {
+    display: none;
+}*/
+    .nav-header {
+        display: none;
+    }
+    .nav-header-movil {
+        display: block;
+    }
+    #bgvid {
+        display: none;
+    }
+    .texture-div {
+        display:none;
+    }
+
+    .lc-logo {
+        width: 110px;
+        margin-top: 20px;
+    }
+
+    .lolla-logo {
+        width: 150px;
+        margin-top: 30px;
+    }
+
+    .video-modal {
+        width: 500px !important;
+        height: 500px !important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .item-meta {
+        font-size: 18px; 
+    }
+
+    .userpic {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px
+    }
+
+    .demo-icon {
+        font-size: 25px;
+    }
+    
+    .red-letters-logo {
+        font-size: 2vh;
+    }
+    
+    .green-letters-logo{
+        font-size: 2vh;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .cbp-rfgrid li {
+        width: 50%; /* Fallback */
+        width: -webkit-calc(100% / 2);
+        width: calc(100% / 2);
+    }
+    .footer {
+        height: 100px;
+    }
+    .lolla-logo {
+        width: 115px;
+        margin-top: 25px;
+    }
+    .lc-logo {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cbp-rfgrid li {
+        width: 100%; /* Fallback */
+        width: -webkit-calc(100%);
+        width: calc(100%);
+    }
+    .nav-header {
+        height: auto;
+        width: auto;    
+    }
+    .video-modal {
+        width: 270px !important;
+        height: 270px !important     
+    }
+    .item-wrapper {
+        padding: 0px 0px 0px;
+    }
+    .modal-body {
+        padding: 10px;
+    }
+
+    .right-side-wrapper {
+        top: auto; 
+        left: auto; 
+        bottom: 20px; 
+        right: 0px; 
+        margin-left: 90px;
+        position: relative;
+    }
+    .item-meta {
+        font-size: 16px; 
+    }
+    .user-nickname {
+        font-size: 13px;
+    }
+    .lc-logo {
+        width: 65px;
+        margin-top: 13%;
+    }
+
+    .lolla-logo {
+        width: 80px;
+        margin-top: 30px;
+    }
+    .footer {
+        height: 95px;
+        margin-top: 65px;
+    }
+    .load_more {
+        text-align: center;
+        margin-top: 65px;
+    }
+
+    .connect-tw, .connect-fb, .connect-ig {
+        padding: 13px 15px 5px 15px;
+    }
+
+    .connect-buttons {
+        font-size: 8px;
+    }
+
+    .action-call {
+        margin-top: 20px;
+        font-family: PraterSansOne-Regular;
+        font-size: 15px;
+        text-align: center;
+        color: #fff;
+        line-height: 20px;
+        position: absolute;
+        top: 175px;
+        margin-left: 15px;
+    }
+
+    .line-foot {
+        margin-left: -8px;
+    }
+
+    .nav-header-movil {
+        height: 55px;  
+    }
+
+    .nav-logo-movil {
+        margin-top: 10%;
+        height: 70px;
+    }
+
+}
+
+
+@media screen and (max-width: 300px) {
+    .cbp-rfgrid li {
+        width: 100%;
+    }
+
+}
+

@@ -1,0 +1,599 @@
+body {
+    font: 1em/1.67 'Open Sans', Arial, Sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img, video {
+    width: inherit;
+}
+
+li {
+    height: 0;
+    padding: 25% 0 0 0;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+li img.landscape {
+    max-width: none;
+    max-height: 100%;
+}
+
+.fill {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden
+}
+.fill img {
+    flex-shrink:0;
+    min-width:100%;
+    min-height:100%
+}
+
+.like-button-open {
+    display:block;
+    background-image: url('../img/hearth.png');
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+.like-button-full {
+    display:block;
+    background-image: url('../img/hearth_liked.png');
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+.share-text {
+    font-family: "PraterSansOne-Regular";
+}
+
+/* ================== RICARDO SIDE ============================*/
+
+.item-wrapper {
+    padding: 0px 30px 0px;
+    font-family: "PraterSansOne-Regular";
+}
+
+.media-wrapper {
+    margin: 0 auto 15px;
+    background: rgba(0,0,0,0.1);
+    min-height: 200px;
+    max-width: 600px;
+    position: relative;
+}
+
+.item-cont {
+    margin: 0;
+}
+.caption-table {
+    height: auto;
+    padding: 0 0 15px;
+    height: 50px;
+    width: 100%;
+    display: table;
+}
+
+.caption-table .caption-content {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.caption-content {
+    overflow: hidden;
+}
+
+.userpic {
+    width: 65px;
+    height: 65px;
+    border-radius: 30px;
+    background-size: cover !important;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    margin-right: 15px;
+}
+
+.hover-userpic {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background-size: cover !important;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: -10px;
+}
+
+figcaption {
+    font-size: 1em;
+    text-align: center;
+}
+
+.play-div {
+    height: 100%;
+    top: 10% !important;
+    left: 50%;
+    font-size: 3.25em;
+    margin-left: -0.3em;
+    margin-top: -1em;
+    right: auto !important;
+
+}
+
+.btn-finalizar {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.item-meta {
+
+    font-size: 25px;
+    height: 90px;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-color: rgba(240, 237, 231, 0.4);
+    padding-top: 15px;
+    position: relative;
+    margin: 5px 0 0;
+    box-sizing: content-b
+}
+
+.user-name {
+    margin-right: 10px;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.left-side-wrapper a {
+    display: inline-block;
+    border: none !important;
+}
+
+.user-nickname {
+    color: rgb(218, 218, 218) !important;
+    display: inline-block;
+    margin-right: 7px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.icon-hdl-tw:hover {
+    color: #00A9E7;
+}
+
+.icon-hdl-fb:hover {
+    color: #1D39B1;
+}
+
+.facebook_share:focus {
+    color: #1D39B1;
+    text-decoration: none;
+}
+
+.twitter_share:focus {
+    color: #00A9E7;
+    text-decoration: none;
+}
+.demo-icon
+{
+    font-size: 30px;    
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* You can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.right-side-wrapper {
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 20px;
+    right: 20px;
+    -webkit-transform: translate3d(0, -10px, 0);
+    -moz-transform: translate3d(0, -10px, 0);
+    -ms-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+    -webkit-backface-visibility: hidden;
+    -ms-transition: all 100ms ease 0ms;
+    -moz-transition: all 100ms ease 0ms;
+    -webkit-transition: all 100ms ease 0ms;
+    transition: all 100ms ease 0ms;
+}
+
+.like-wrapper {
+    border-right: 2px solid rgba(255, 255, 255, 0.42);
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+}
+
+.share-wrapper {
+    display: inline-block;
+    font-family: "fontello";
+    margin-bottom: -10px;
+    margin-right: 20px;
+    margin-left: 5px;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.42); */
+    text-align: center;
+}
+
+.num-likes {
+    margin-right: 15px;
+    margin-bottom: 0px;
+}
+
+a:hover {
+    color: #F1EAEA;
+}
+
+.modal-content {
+    background-image: url('../img/modal_bg.png');
+    border: 8px solid rgb(0, 0, 0);
+    color: #F1EAEA;
+}
+
+.modal-header {
+    padding: 10px;
+    border-bottom: 0;
+}
+
+.modal-header .close {
+    margin-top: -12px;
+    margin-bottom: -20px;
+}
+
+.close {
+    float: right;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.7;
+}
+.close:focus, .close:hover {
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .4;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.video-modal {
+    width: 600px !important; 
+    height: 600px !important;
+}
+
+.nav-logo-file {
+    background: url('../img/header_logo.png') center center no-repeat;
+    width: 100%;
+    height: 100px;
+    background-size: contain;
+    margin-top: 0px;
+}
+
+.file-user-details {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.progress {
+    display: inline-block;
+    width: 90%;
+    height: 25px;
+    margin-right: 10px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.cancel {
+    display: inline-block;
+    margin-bottom: 55px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #07b1a4;
+    border-color: #000000;
+}
+.btn-success:hover {
+    color: #bdbdbd;
+    background-color: rgb(21, 101, 95);;
+    border-color: rgb(21, 101, 95);;
+}
+.btn-success:focus {
+    color: #bdbdbd;
+    background-color: rgb(21, 101, 95);;
+    border-color: rgb(21, 101, 95);
+}
+.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open>.dropdown-toggle.btn-success.focus, .open>.dropdown-toggle.btn-success:focus, .open>.dropdown-toggle.btn-success:hover {
+    color: #bdbdbd;
+    background-color: rgb(21, 101, 95);;
+    border-color: rgb(21, 101, 95);
+}
+.progress-cancel {
+    margin-bottom: -35px;
+}
+.fb-user_full_name {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.progress-bar-success {
+    background-color: #07B1A4;
+}
+
+.vjs-big-play-button{
+    top: 50%!important;
+    left: 50%!important;
+    width: 112px!important;
+    height: 50px!important;
+    margin: -40px 0px 0px -60px!important;
+}
+
+.user-connected-fb {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1D39B1;
+    border-color: #1D39B1;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #1D39B1;
+    border-color: #1D39B1;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+    color: #bdbdbd;
+    background-color: #1D39B1;
+    border-color: #1D39B1;
+}
+
+.btn-twitter {
+    color: #fff;
+    background-color: #00a9e7;
+    border-color: #00a9e7;
+}
+.btn-twitter:hover {
+    color: #fff;
+    background-color: #00a9e7;
+    border-color: #00a9e7;
+}
+
+.btn-twitter.active.focus, .btn-twitter.active:focus, .btn-twitter.active:hover, .btn-twitter:active.focus, .btn-twitter:active:focus, .btn-twitter:active:hover, .open>.dropdown-toggle.btn-twitter.focus, .open>.dropdown-toggle.btn-twitter:focus, .open>.dropdown-toggle.btn-twitter:hover {
+    color: #bdbdbd;
+    background-color: #00a9e7;
+    border-color: #00a9e7;
+}
+
+.logout-btn {
+    font-size: 12px;
+}
+.loading-more {
+    color: white;
+    left: 50%;
+    margin-left: -50px;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.tweet-div {
+    background-color: #00a9e7;
+    height: 100%;
+    top: 0 !important;
+    right: 0 !important;
+    font-size: 1.25vw;
+    width: 100%;
+}
+.tweet-text-div {
+    width: 90%;
+    height: 100%;
+    top: 0;
+    right: 17px;
+    text-align: center;
+    font-size: 25px;
+}
+.nav-header-movil {
+    width: 100%;
+    height: 85px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    position: absolute;
+    margin-right: 0px;
+    margin-left: 0px;
+    display: none;
+    position: fixed;
+    z-index: 100000;
+}
+
+.nav-logo-movil {
+    margin-top: 5%;
+    height: 110px;
+}
+
+.red-letters-logo {
+    color: #FF3333; 
+    font-size: 28px;
+    font-family: PraterSansOne-Bold;
+}
+
+.green-letters-logo {
+    color: #00CC99; 
+    font-size: 28px;
+    font-family: PraterSansOne-Bold;
+}
+
+.row-campaing-logo-movil {
+    position: absolute;
+    vertical-align: middle;
+    top: 50%;
+    margin-top: -20%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.tweet-div-content {
+    background-color: #00a9e7;
+    height: 100%;
+    top: 0 !important;
+    right: 0 !important;
+    font-size: 2.5vh;
+    position: absolute;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.tweet-text {
+    vertical-align: middle;
+    position: absolute;
+    top: 35%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.campaign-logo {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: auto;
+}
+
+.campaing-logo-div-movil {
+
+    max-width: 75%;
+    height: 80%;
+    vertical-align: middle;
+    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+}
+
+.header-bars {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 3vh;
+}
+
+.texture-div {
+    background: url('../img/textura.png') center center no-repeat;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 10;
+    width: auto;
+    height: auto;
+    background-size: cover;
+}
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 700px !important;
+    }
+}
+
+/* ==============================================================*/
+
+@media screen and (max-width: 1190px) {
+    li {
+        padding: 33% 0 0 0;
+    }
+}
+
+@media screen and (max-width: 945px) {
+    li {
+        padding: 50% 0 0 0;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    li {
+        padding: 42% 0 0 0;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    li {
+        padding: 54% 0 0 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cbp-rfgrid li {
+        width: 50%; /* Fallback */
+        width: -webkit-calc(100% / 2);
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .cbp-rfgrid li {
+        width: 100%;
+    }
+}
+
