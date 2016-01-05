@@ -3,9 +3,9 @@ jQuery(document).ready(function($) {
 
     var getUrlParameter = function getUrlParameter(sParam) {
         var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
-            i;
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
         for (i = 0; i < sURLVariables.length; i++) {
             sParameterName = sURLVariables[i].split('=');
@@ -35,7 +35,6 @@ jQuery(document).ready(function($) {
         if($('#id-aux').hasClass(net_id)) {
 
             $("#content_modal").appendTo("body").modal('show');
-
         } else {
             $('#loading-content').show();
             $('#content-modal-container').empty();
@@ -55,7 +54,7 @@ jQuery(document).ready(function($) {
                             user_id = response['id'];
                         }
                     }
-                );
+                    );
             }
             else {
                 user_id = '';

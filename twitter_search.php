@@ -54,8 +54,10 @@
         $net = utf8_decode('twitter');
         $user_id = utf8_decode($statuses[$i]['user']['id']);
         $net_id = utf8_decode($statuses[$i]['id']);
+
         $media_link = utf8_decode($statuses[$i]['entities']['media'][0]['media_url']);
         $thumbnail_link = utf8_decode($statuses[$i]['entities']['media'][0]['media_url']);
+
         $uploaded_time = utf8_decode($statuses[$i]['created_at']);
         $caption = utf8_decode($statuses[$i]['text']);
         $expanded_url = utf8_decode($statuses[$i]['entities']['media'][0]['expanded_url']);

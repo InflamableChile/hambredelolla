@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+>>>>>>> 62ac7f25477cbde730c833f75adc9cdd5556824a
 <?php
 	$db_host="localhost";
 	$db_user="hambrede_lolla";

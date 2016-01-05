@@ -88,7 +88,9 @@ class UploadHandler
             // Defines which files can be displayed inline when downloaded:
             'inline_file_types' => '/\.(gif|jpe?g|png)$/i',
             // Defines which files (based on their names) are accepted for upload:
+
             'accept_file_types' => '/\.(mp4)$/i',
+
             // The php.ini settings upload_max_filesize and post_max_size
             // take precedence over the following max_file_size setting:
             'max_file_size' => null,
@@ -1158,9 +1160,17 @@ class UploadHandler
         return $_REQUEST['net_id'] . $extension;
     }
 
+<<<<<<< HEAD
     protected function generate_video_thumb($video_path) {
 
         exec('ffmpeg  -ss 00:00:02.00 -i files/'. $video_path .' -f image2 -vframes 1 files/thumbs/'. $video_path .'.jpg');
+=======
+    //FUNCION PARA GENERAR THUMBNAIL DEL VIDEO - ESTO SE DEBE FINALIZAR CUANDO
+    //LA APLICACION ESTE EN EL SERVIDOR DADO QUE HAY QUE INSTALAR FFMPEG
+    protected function generate_video_thumb($video_path) {
+
+        exec('ffmpeg -i files/'. $video_path .' -f image2 -vframes 1 files/thumbs/'. $video_path .'.jpg');
+>>>>>>> 62ac7f25477cbde730c833f75adc9cdd5556824a
         
     }
 

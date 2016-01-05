@@ -49,7 +49,6 @@ jQuery(document).ready(function($) {
 
     });
 
-
     /*$('#twitter_share').click(function(e) {
         e.preventDefault();
         net_id = $(this).attr('data-id');

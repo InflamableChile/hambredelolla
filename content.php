@@ -38,8 +38,6 @@ function get_video() {
 <?php }
     else { 
 
-
-
         if($user_id != '') {
             $sql_like = "SELECT * FROM ". $db_likes_table . " WHERE net_id = '$net_id' AND user_id = '$user_id'";
             $rsd_like = mysql_query($sql_like,$db_connection);  
@@ -55,8 +53,8 @@ function get_video() {
 
         while($row = mysql_fetch_array($rsd)) {
 
-            $type = $row['type'];
 
+            $type = $row['type'];
 ?>
 
 <div id="id-aux" style="display:none;" class=<?php echo '"' . $net_id . '"'?>> </div>
